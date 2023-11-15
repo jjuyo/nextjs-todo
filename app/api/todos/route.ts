@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
         message: '할일 추가 성공',
         data : addedTodo   
     }
-    return Response.json(response, {status: 201});
+    return NextResponse.json(response, {status: 201});
     //const{title} 이렇게 하고 json{title} 이렇게 하면 title만 받음
     //data이렇게 하면 다 받음
   }
