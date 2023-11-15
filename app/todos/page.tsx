@@ -1,9 +1,13 @@
 import { title } from "@/components/primitives";
 import TodosTable from "@/components/todos-table";
+import {Todo} from"@/types";
 //firebase 통해서 가져와야함
 async function fetchTodosApiCall(){
 	console.log("fetchTodosApiCall called");
-	const res = await fetch(`${process.env.BASE_URL}/api/todos/`, {cache:'no-store'})
+	const res = await fetch(`${process.env.BASE_URL}/api/todos/`, {cache:"no-store"});
+	
+	const contentTypeCheck = res.headers.get('Content-Type');
+	console.log(contentTypeCheck)
 	return res.json();
 }
 
